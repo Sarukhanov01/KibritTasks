@@ -13,14 +13,14 @@ import java.util.Date;
 import java.util.List;
 
 public class WorkingWithFile {
-    private Path path = Paths.get("C:/Users/Polad Sarukhanov/Desktop/input1[507].txt");
-    private Path path2 = Paths.get("C:/Users/Polad Sarukhanov/Desktop/newinput1[507].txt");
+    private Path inputPath = Paths.get("C:/Users/Polad Sarukhanov/Desktop/input1[507].txt");
+    private Path outputPath = Paths.get("C:/Users/Polad Sarukhanov/Desktop/output1[507].txt");
 
 
     public List<String> readFile() {
         List<String> strings = new ArrayList<>();
         try {
-            strings = Files.readAllLines(path);
+            strings = Files.readAllLines(inputPath);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -66,7 +66,7 @@ public class WorkingWithFile {
 
     public void writeToFile(List<String> strings){
         try {
-            Files.write(path2,strings);
+            Files.write(outputPath,strings);
         } catch (IOException e) {
             e.printStackTrace();
         }
